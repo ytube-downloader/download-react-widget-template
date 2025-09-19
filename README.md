@@ -1,7 +1,27 @@
 # Project Setup and Customization Guide
 
 Welcome to this project! This guide will walk you through the steps to set up the project locally, customize the color scheme, and change the Ad URL used in the iframe.
+## Detailed Description (for README or repository description)
 
+**🚀 YouTube Download React Widget Template**
+
+A modern, fully customizable React widget template designed for YouTube video download functionality. Built with Next.js and styled with Tailwind CSS, this template provides a clean, responsive interface that can be easily integrated into any web application.
+
+### ✨ Key Features
+
+- **🎨 Fully Customizable**: Easy-to-modify color schemes and styling
+- **📱 Responsive Design**: Works seamlessly across all device sizes
+- **⚡ Modern Tech Stack**: Built with React, Next.js, and Tailwind CSS
+- **💰 Ad Integration**: Configurable advertisement iframe support
+- **🔧 Developer Friendly**: Well-documented setup and customization guide
+- **🎯 Production Ready**: Optimized build process and deployment-ready
+
+### 🛠️ Built With
+
+- **React** - Component-based UI library
+- **Next.js** - React framework for production
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Type-safe JavaScript
 ---
 
 ## Prerequisites
@@ -20,8 +40,8 @@ Before setting up the project, make sure you have the following tools installed:
 Start by cloning the repository to your local machine.
 
 ```bash
-git clone https://github.com/kulikov-debug/youtube-download-react-widget-template
-cd your-repository
+git clone https://github.com/ytube-downloader/download-react-widget-template.git
+cd download-react-widget-template
 ```
 
 ## 2. Install Dependencies
