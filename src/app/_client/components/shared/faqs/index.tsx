@@ -225,26 +225,7 @@ export const FAQs = ({ vda }: FAQProps) => {
           </p>
         </motion.div>
 
-        {/* Search bar */}
-        <motion.div
-          className="mb-8"
-          variants={itemVariants}
-        >
-          <div className="relative max-w-lg mx-auto">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <svg className="h-5 w-5 text-base_one" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-            <input
-              type="text"
-              className="input-modern pl-12 pr-4 w-full"
-              placeholder="Search frequently asked questions..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
-        </motion.div>
+       
 
         <motion.div
           className="glass-card rounded-3xl p-8 lg:p-12 shadow-2xl"
@@ -394,36 +375,6 @@ export const FAQs = ({ vda }: FAQProps) => {
             </motion.div>
           </motion.div>
 
-          {/* Contact support */}
-          <motion.div
-            className="mt-12 p-6 glass-card rounded-2xl text-center"
-            variants={itemVariants}
-          >
-            <motion.div
-              className="w-12 h-12 bg-purple_main/20 rounded-full flex items-center justify-center mx-auto mb-4"
-              whileHover={{ scale: 1.1, rotate: 10 }}
-            >
-              <svg className="w-6 h-6 text-purple_main" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </motion.div>
-            
-            <h4 className="font-semibold text-heading_main dark:text-dark_heading_main mb-2">
-              Still have questions?
-            </h4>
-            
-            <p className="text-base_one dark:text-dark_base_one mb-4">
-              Can't find what you're looking for? Get in touch with our support team.
-            </p>
-            
-            <motion.button
-              className="btn-modern px-6 py-3"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Contact Support
-            </motion.button>
-          </motion.div>
         </motion.div>
       </div>
     </motion.section>

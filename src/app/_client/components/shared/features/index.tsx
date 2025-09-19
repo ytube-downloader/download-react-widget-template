@@ -76,7 +76,7 @@ export const Features = ({ vda }: FeaturesProps) => {
           className="group perspective-1000"
         >
           <motion.div
-            className="relative glass-card p-6 lg:p-8 rounded-3xl cursor-pointer transition-all duration-500 transform-gpu group-hover:shadow-2xl overflow-hidden"
+            className="relative bg-white/90 dark:bg-dark_heading/90 backdrop-blur-sm p-6 lg:p-8 rounded-3xl cursor-pointer transition-all duration-500 transform-gpu group-hover:shadow-2xl overflow-hidden border border-white/20 dark:border-gray-700/20"
             whileHover={{ 
               rotateY: 5, 
               rotateX: 5,
@@ -150,12 +150,7 @@ export const Features = ({ vda }: FeaturesProps) => {
                 initial={{ height: 0 }}
                 whileHover={{ height: "auto" }}
               >
-                <button className="text-purple_main dark:text-purple_light font-semibold text-sm flex items-center gap-2 hover:gap-3 transition-all duration-200">
-                  Learn more
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+
               </motion.div>
             </div>
 
@@ -283,24 +278,7 @@ export const Features = ({ vda }: FeaturesProps) => {
           {renderFeatures()}
         </motion.div>
 
-        {/* Call to action section */}
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ delay: 1, duration: 0.6 }}
-        >
-          <motion.button
-            className="btn-modern px-8 py-4 inline-flex items-center gap-3"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span>Explore All Features</span>
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </motion.button>
-        </motion.div>
+
       </div>
     </motion.section>
   )

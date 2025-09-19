@@ -272,33 +272,6 @@ export const Footer = () => {
                 ))}
               </motion.div>
 
-              {/* Newsletter signup */}
-              <motion.div
-                className="glass-card p-6 rounded-2xl"
-                variants={itemVariants}
-                whileHover={{ y: -2 }}
-              >
-                <h4 className="font-semibold text-heading_main dark:text-dark_heading_main mb-2">
-                  Stay Updated
-                </h4>
-                <p className="text-base_one dark:text-dark_base_one text-sm mb-4">
-                  Get notified about new features and updates
-                </p>
-                <div className="flex gap-2">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="input-modern flex-1 text-sm py-2 px-3"
-                  />
-                  <motion.button
-                    className="btn-modern px-4 py-2 text-sm"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Subscribe
-                  </motion.button>
-                </div>
-              </motion.div>
             </motion.div>
 
             {/* Navigation links */}

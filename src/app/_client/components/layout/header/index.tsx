@@ -83,11 +83,7 @@ export const Header = () => {
 
   return (
     <motion.header
-      className={`sticky top-0 z-50 transition-all duration-300 lg:pt-6 lg:px-5 ${
-        scrolled 
-          ? 'lg:bg-body/80 dark:bg-dark_body/80 backdrop-blur-md' 
-          : 'lg:bg-transparent'
-      }`}
+      className={`sticky top-0 z-50 transition-all duration-300 lg:pt-6 lg:px-5`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ 
@@ -98,10 +94,10 @@ export const Header = () => {
       }}
     >
       <motion.div
-        className={`glass-card transition-all duration-300 p-4 lg:p-6 flex justify-between items-center lg:rounded-3xl ${
+        className={`bg-white/95 dark:bg-dark_heading/95 backdrop-blur-md transition-all duration-300 p-4 lg:p-6 flex justify-between items-center lg:rounded-3xl border border-white/20 dark:border-gray-700/20 ${
           scrolled 
-            ? 'shadow-modern backdrop-blur-md bg-header_bg/95 dark:bg-dark_heading/95' 
-            : 'bg-header_bg dark:bg-dark_heading shadow-sm'
+            ? 'shadow-lg shadow-black/5 dark:shadow-black/20' 
+            : 'shadow-sm shadow-black/5 dark:shadow-black/10'
         }`}
         whileHover={{ y: -2 }}
         transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -114,7 +110,7 @@ export const Header = () => {
           whileTap="tap"
         >
           <Link
-            className="text-gradient font-black text-xl lg:text-5xl relative group"
+            className="font-black text-xl lg:text-5xl relative group bg-gradient-to-r from-purple_main to-accent_blue bg-clip-text text-transparent"
             href="/"
           >
             VDA
@@ -129,7 +125,7 @@ export const Header = () => {
 
         {/* Mobile menu button with enhanced animation */}
         <motion.button
-          className="lg:hidden p-2 rounded-xl glass focus-modern relative overflow-hidden"
+          className="lg:hidden p-2 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 focus:outline-none focus:ring-2 focus:ring-purple_main relative overflow-hidden"
           onClick={() => setIsExpanded(true)}
           aria-expanded={isExpanded}
           variants={menuButtonVariants}
@@ -140,13 +136,14 @@ export const Header = () => {
           <motion.div
             animate={isExpanded ? { rotate: 180 } : { rotate: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="text-gray-700 dark:text-gray-300"
           >
             <MenuIcon />
           </motion.div>
           
           {/* Ripple effect */}
           <motion.div
-            className="absolute inset-0 bg-white/20 rounded-xl"
+            className="absolute inset-0 bg-purple_main/20 rounded-xl"
             initial={{ scale: 0, opacity: 1 }}
             whileTap={{ scale: 1, opacity: 0 }}
             transition={{ duration: 0.3 }}
@@ -169,7 +166,7 @@ export const Header = () => {
               
               {/* Mobile menu */}
               <motion.div
-                className="lg:hidden fixed top-0 right-0 min-h-screen w-80 max-w-[85vw] glass-card border-l border-white/10"
+                className="lg:hidden fixed top-0 right-0 min-h-screen w-80 max-w-[85vw] bg-white/95 dark:bg-dark_heading/95 backdrop-blur-md border-l border-white/20 dark:border-gray-700/20"
                 variants={mobileMenuVariants}
                 initial="hidden"
                 animate="visible"
@@ -177,7 +174,7 @@ export const Header = () => {
               >
                 {/* Close button */}
                 <motion.button
-                  className="absolute top-6 right-6 p-2 rounded-xl glass hover:bg-red-500/20 focus-modern"
+                  className="absolute top-6 right-6 p-2 rounded-xl bg-white/50 dark:bg-gray-800/50 hover:bg-red-500/20 focus:outline-none focus:ring-2 focus:ring-purple_main"
                   onClick={() => setIsExpanded(false)}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -191,7 +188,7 @@ export const Header = () => {
                   <HeaderNav onClose={() => setIsExpanded(false)} />
                   
                   <motion.div 
-                    className="mt-8 pt-8 border-t border-white/10 flex justify-center"
+                    className="mt-8 pt-8 border-t border-white/10 dark:border-gray-700/20 flex justify-center"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.3 }}
@@ -223,10 +220,10 @@ export const Header = () => {
         )}
       </motion.div>
 
-      {/* Floating decoration elements */}
-      <div className="absolute -top-4 left-10 w-2 h-2 bg-purple_main/30 rounded-full animate-float hidden lg:block" />
-      <div className="absolute -top-2 right-20 w-1 h-1 bg-accent_blue/30 rounded-full animate-float hidden lg:block" style={{ animationDelay: '1s' }} />
-      <div className="absolute -bottom-1 left-1/3 w-1.5 h-1.5 bg-accent_pink/30 rounded-full animate-float hidden lg:block" style={{ animationDelay: '2s' }} />
+      {/* Floating decoration elements - theme aware */}
+      <div className="absolute -top-4 left-10 w-2 h-2 bg-purple_main/30 dark:bg-purple_main/50 rounded-full animate-float hidden lg:block" />
+      <div className="absolute -top-2 right-20 w-1 h-1 bg-accent_blue/30 dark:bg-accent_blue/50 rounded-full animate-float hidden lg:block" style={{ animationDelay: '1s' }} />
+      <div className="absolute -bottom-1 left-1/3 w-1.5 h-1.5 bg-accent_pink/30 dark:bg-accent_pink/50 rounded-full animate-float hidden lg:block" style={{ animationDelay: '2s' }} />
     </motion.header>
   )
 }
