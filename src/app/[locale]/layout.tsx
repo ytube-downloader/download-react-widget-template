@@ -35,21 +35,36 @@ const Layout = async({ children, params }: LayoutProps) => {
   const messages = await getMessages();
 
   return (
-      <html suppressHydrationWarning lang={locale}>
-        <Script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.9/iframeResizer.min.js"></Script>
-        <body className={`${ inter_sans } font-inter bg-body dark:bg-dark_body`}>
-          <ThemeProvider attribute="class">
-            <NextIntlClientProvider messages={messages}>
-              <Header />
-              {children}
-              <ToastContainer autoClose={3000} />
-              <Footer />
-            </NextIntlClientProvider>
-          </ThemeProvider>
-        </body>
-      </html>
+    <html suppressHydrationWarning lang={locale}>
+      {/* Add theme script to prevent flash */}
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark')
+                } else {
+                  document.documentElement.classList.remove('dark')
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
+      </head>
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.9/iframeResizer.min.js"></Script>
+      <body className={`${inter_sans} font-inter bg-body dark:bg-dark_body transition-colors duration-300`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <NextIntlClientProvider messages={messages}>
+            <Header />
+            {children}
+            <ToastContainer autoClose={3000} />
+            <Footer />
+          </NextIntlClientProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
-
 
 export default Layout
